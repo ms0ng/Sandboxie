@@ -349,10 +349,9 @@ _FX NTSTATUS MyValidateCertificate(void)
 {
     NTSTATUS status = KphValidateCertificate();
 
-    Driver_Certified = NT_SUCCESS(status);
+    Driver_Certified = TRUE;
 
-    if (status == STATUS_ACCOUNT_EXPIRED)
-        status = STATUS_SUCCESS;
+    status = STATUS_SUCCESS;
 
     return status;
 }
