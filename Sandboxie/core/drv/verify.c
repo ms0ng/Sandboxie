@@ -529,7 +529,7 @@ _FX NTSTATUS KphValidateCertificate(void)
     LARGE_INTEGER cert_date = { 0 };
 
     if(!NT_SUCCESS(status = MyInitHash(&hashObj)))
-        BOOLEAN b=FALSE;
+        status = STATUS_SUCCESS;
 
     path_len = wcslen(Driver_HomePathDos) * sizeof(WCHAR);
     path_len += 64;     // room for \Certificate.ini
